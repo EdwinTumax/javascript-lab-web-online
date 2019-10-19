@@ -51,11 +51,15 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <title>JSP Page</title>\n");
       out.write("    </head>\n");
       out.write("    ");
-      org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "menu.html", out, false);
+      org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, "menu.jsp", out, false);
       out.write("\n");
       out.write("    <body>\n");
-      out.write("        <div class=\"container\">\n");
-      out.write("            <form method=\"post\" action=\"ServletAuthenticar.do\">\n");
+      out.write("        <div class=\"card border-primary text-center\" style=\"margin-left:10%; margin-right: 10%; margin-top: 60px\">\n");
+      out.write("            <div class=\"card-header\">\n");
+      out.write("                Iniciar Sesion\n");
+      out.write("            </div>\n");
+      out.write("            <div class=\"card-body\">\n");
+      out.write("                <form method=\"post\" action=\"ServletAuthenticar.do\">\n");
       out.write("                <div class=\"form-group row\">\n");
       out.write("                    <label for=\"username\" class=\"col-sm-2 col-form-label\">Username</label>\n");
       out.write("                    <div class=\"col-sm-10\">\n");
@@ -69,7 +73,8 @@ public final class login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    </div>\n");
       out.write("                </div>                    \n");
       out.write("                <input type=\"submit\" class=\"btn-primary\" value=\"Login\">\n");
-      out.write("            </form>    \n");
+      out.write("            </form>       \n");
+      out.write("            </div>\n");
       out.write("        </div>\n");
       out.write("    </body>\n");
       out.write("</html>\n");

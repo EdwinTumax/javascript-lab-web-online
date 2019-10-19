@@ -11,7 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    <jsp:include page="menu.html"></jsp:include>
+    <jsp:include page="menu.jsp"></jsp:include>
     <body>
         <div class="card border-primary text-center" style="margin-left:10%; margin-right: 10%; margin-top: 60px">
             <div class="card-header">

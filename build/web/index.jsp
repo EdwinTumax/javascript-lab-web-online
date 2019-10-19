@@ -4,6 +4,7 @@
     Author     : Developer
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -11,7 +12,10 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    <jsp:include page="menu.html"></jsp:include>
+    <c:if test="${empty token}">
+        <c:redirect url="login.jsp"></c:redirect>
+    </c:if>
+    <jsp:include page="menu.jsp"></jsp:include>
     <body>
         <div class="jumbotron">
             <h1 class="display-4">Bienvenido al portal de compras en linea!!!</h1>

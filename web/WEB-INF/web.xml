@@ -64,4 +64,12 @@
         <servlet-name>ServletActualizarCategoria</servlet-name>
         <url-pattern>/ServletActualizarCategoria.do</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>ServletCerrarSession</servlet-name>
+        <servlet-class>com.webonline.core.servlet.ServletCerrarSession</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletCerrarSession</servlet-name>
+        <url-pattern>/ServletCerrarSession.do</url-pattern>
+    </servlet-mapping>
 </web-app>

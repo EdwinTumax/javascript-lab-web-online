@@ -1,12 +1,14 @@
+<%-- 
+    Document   : menu
+    Created on : 19/10/2019, 02:33:13 PM
+    Author     : Developer
+--%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>SisFAC</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -22,20 +24,22 @@ and open the template in the editor.
                     <li class="nav-item active">
                         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="ServletCategorias.do">Categorias</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                    </li>
+                    <c:if test="${not empty token}">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Dropdown
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="ServletCategorias.do">Categorias</a>
+                            </div>
+                        </li>
+                    </c:if>
+
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
-                    <a href="ServletCerrarSession.do" class="btn btn-outline-danger my-2 my-sm-0">Cerrar Session</a>
+                    <c:if test="${not empty token}">
+                        <a href="ServletCerrarSession.do" class="btn btn-outline-danger my-2 my-sm-0">Cerrar Session</a>
+                    </c:if>
                 </form>
             </div>
         </nav>

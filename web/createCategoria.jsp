@@ -6,7 +6,10 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    <jsp:include page="menu.html"></jsp:include>
+    <c:if test="${empty token}">
+        <c:redirect url="login.jsp"></c:redirect>
+    </c:if>
+    <jsp:include page="menu.jsp"></jsp:include>
         <body>
             <div class="card border-primary text-center">
                 <div class="card-header">
@@ -14,7 +17,7 @@
                 </div>
                 <div class="card-body">               
                 <c:if test="${not empty categoria}">
-                    <form action="" method="post">
+                    <form action="ServletActualizarCategoria.do?codigoCategoria=${categoria.codigoCategoria}" method="post">
                         <div class="form-group row">
                             <label class="col-form-label col-sm-2" id="descripcion" for="descripcion">Descripcion</label>
                             <div class="col-sm-10">
